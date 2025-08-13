@@ -9,25 +9,24 @@ function Login() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [notice, setNotice] = useState({ type: "", text: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setNotice({ type: "", text: "" });
 
     if (!isLoginMode && password !== confirmPassword) {
       setPasswordError("Passwords do not match");
       return;
     }
 
-    let apiUrl = "";
-    let payload = {};
+    const apiUrl = isLoginMode
+      ? "http://localhost:8080/api/login"
+      : "http://localhost:8080/api/users";
 
-    if (isLoginMode) {
-      apiUrl = "http://localhost:8080/api/login";
-      payload = { email, password };
-    } else {
-      apiUrl = "http://localhost:8080/api/users";
-      payload = { name, email, password };
-    }
+    const payload = isLoginMode
+      ? { email, password }
+      : { name, email, password };
 
     try {
       const res = await fetch(apiUrl, {
@@ -36,29 +35,36 @@ function Login() {
         body: JSON.stringify(payload),
       });
 
-      const text = await res.text();
       let data;
       try {
-        data = JSON.parse(text);
+        data = await res.json();
       } catch {
-        data = { message: text };
+        data = { message: await res.text() };
       }
 
       if (!res.ok) {
-        alert("Error: " + data.message);
+        setNotice({ type: "error", text: data.message || "Login failed. Please check your credentials." });
         return;
       }
 
-      alert(data.message || "Request successful");
-      console.log("Response:", data);
+      // Save user info
+      const userData = data.user || { name: name || email };
+      localStorage.setItem("user", JSON.stringify(userData));
 
+      setNotice({ type: "success", text: data.message || "Login successful!" });
+
+      // Clear form
       setName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
       setPasswordError("");
+
+      // Redirect after 1 second
+      setTimeout(() => navigate("/"), 1000);
+
     } catch (err) {
-      alert("Request failed: " + err.message);
+      setNotice({ type: "error", text: "Request failed: " + err.message });
     }
   };
 
@@ -91,18 +97,14 @@ function Login() {
         <div className="relative flex h-12 mb-6 border border-gray-300 rounded-full overflow-hidden">
           <button
             type="button"
-            className={`w-1/2 text-lg font-medium transition-all z-10 ${
-              isLoginMode ? "text-white" : "text-black"
-            }`}
+            className={`w-1/2 text-lg font-medium transition-all z-10 ${isLoginMode ? "text-white" : "text-black"}`}
             onClick={() => setIsLoginMode(true)}
           >
             Login
           </button>
           <button
             type="button"
-            className={`w-1/2 text-lg font-medium transition-all z-10 ${
-              !isLoginMode ? "text-white" : "text-black"
-            }`}
+            className={`w-1/2 text-lg font-medium transition-all z-10 ${!isLoginMode ? "text-white" : "text-black"}`}
             onClick={() => setIsLoginMode(false)}
           >
             Signup
@@ -113,6 +115,17 @@ function Login() {
             }`}
           ></div>
         </div>
+
+        {/* Notice */}
+        {notice.text && (
+          <div className={`rounded-xl p-3 text-sm mb-4 ${
+            notice.type === "success"
+              ? "bg-green-50 text-green-700 border border-green-200"
+              : "bg-red-50 text-red-700 border border-red-200"
+          }`}>
+            {notice.text}
+          </div>
+        )}
 
         {/* Form */}
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -160,7 +173,6 @@ function Login() {
             </>
           )}
 
-          {/* Forgot Password Link */}
           {isLoginMode && (
             <div className="text-right">
               <button
@@ -192,6 +204,7 @@ function Login() {
                 setPassword("");
                 setConfirmPassword("");
                 setPasswordError("");
+                setNotice({ type: "", text: "" });
               }}
               className="text-cyan-600 hover:underline"
             >
