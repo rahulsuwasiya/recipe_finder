@@ -19,7 +19,7 @@ const Explore = () => {
     <>
       <Navbar />
       <div className="mt-20 px-6 sm:px-10 lg:px-20 py-10 bg-gradient-to-b from-white to-blue-50 min-h-screen">
-        <h1 className="text-4xl font-bold text-center text-blue-700 mb-10">Explore Recipes</h1>
+        <h1 className="text-4xl font-bold text-center text-[#009688] mb-10">Explore Recipes</h1>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
           <input
@@ -27,11 +27,11 @@ const Explore = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search for meals..."
-            className="w-full sm:w-96 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full sm:w-96 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FF6F61]"
           />
           <button
             onClick={handleSearch}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition"
+            className="bg-[#FF6F61] hover:bg-[#009688] text-white px-6 py-3 rounded-lg font-semibold transition"
           >
             Search
           </button>

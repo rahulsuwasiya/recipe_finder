@@ -89,7 +89,7 @@ function Login() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="w-[430px] bg-white p-8 rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-semibold text-center mb-4">
+        <h2 className="text-3xl font-semibold text-center mb-4 text-[#FF6F61]">
           {isLoginMode ? "Login" : "Sign Up"}
         </h2>
 
@@ -110,7 +110,7 @@ function Login() {
             Signup
           </button>
           <div
-            className={`absolute top-0 h-full w-1/2 rounded-full bg-gradient-to-r from-blue-700 via-cyan-600 to-cyan-200 transition-all ${
+            className={`absolute top-0 h-full w-1/2 rounded-full bg-gradient-to-r from-[#009688] via-[#009688] to-[#009688] transition-all ${
               isLoginMode ? "left-0" : "left-1/2"
             }`}
           ></div>
@@ -136,7 +136,7 @@ function Login() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-cyan-500 placeholder-gray-400"
+              className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-[#FF6F61] placeholder-gray-400"
             />
           )}
 
@@ -146,7 +146,7 @@ function Login() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-cyan-500 placeholder-gray-400"
+            className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-[#FF6F61] placeholder-gray-400"
           />
 
           <input
@@ -155,7 +155,7 @@ function Login() {
             required={isLoginMode}
             value={password}
             onChange={handlePasswordChange}
-            className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-cyan-500 placeholder-gray-400"
+            className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-[#FF6F61] placeholder-gray-400"
           />
           {!isLoginMode && (
             <>
@@ -165,7 +165,7 @@ function Login() {
                 required
                 value={confirmPassword}
                 onChange={handleConfirmPasswordChange}
-                className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-cyan-500 placeholder-gray-400"
+                className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-[#FF6F61] placeholder-gray-400"
               />
               {passwordError && (
                 <p className="text-red-500 text-sm">{passwordError}</p>
@@ -178,7 +178,7 @@ function Login() {
               <button
                 type="button"
                 onClick={() => navigate("/forgot-password")}
-                className="text-cyan-600 hover:underline"
+                className="text-[#FF6F61] hover:underline"
               >
                 Forgot password?
               </button>
@@ -187,7 +187,7 @@ function Login() {
 
           <button
             type="submit"
-            className="w-full p-3 bg-gradient-to-r from-blue-700 via-cyan-600 to-cyan-200 text-white rounded-full text-lg font-medium hover:opacity-90 transition"
+            className="w-full p-3 bg-gradient-to-r from-[#009688] via-[#009688] to-[#009688] text-white rounded-full text-lg font-medium hover:opacity-90 transition"
           >
             {isLoginMode ? "Login" : "Signup"}
           </button>
@@ -206,7 +206,7 @@ function Login() {
                 setPasswordError("");
                 setNotice({ type: "", text: "" });
               }}
-              className="text-cyan-600 hover:underline"
+              className="text-[#FF6F61] hover:underline"
             >
               {isLoginMode ? "Signup now" : "Login"}
             </a>

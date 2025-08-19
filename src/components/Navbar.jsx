@@ -31,7 +31,7 @@ const Navbar = () => {
     <div className="shadow-md w-full fixed top-0 left-0 z-50 bg-white">
       <div className="md:flex items-center justify-between py-4 md:px-10 px-7">
         {/* Logo */}
-        <div className="font-bold text-2xl cursor-pointer flex items-center gap-1 text-blue-600">
+        <div className="font-bold text-2xl cursor-pointer flex items-center gap-1 text-[#009688]">
           <ChefHat className="w-7 h-7" />
           <span>RasoiWay</span>
         </div>
@@ -47,7 +47,7 @@ const Navbar = () => {
             <li key={index} className="md:ml-8 md:my-0 my-7 font-semibold">
               <Link
                 to={link.link}
-                className="text-gray-800 hover:text-blue-400 duration-300"
+                className="text-[#263238] hover:text-[#009688] duration-300"
                 onClick={() => setOpen(false)}
               >
                 {link.name}
@@ -70,7 +70,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/login"
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 font-semibold inline-block"
+                className="bg-[#009688] text-white px-4 py-2 rounded hover:bg-[#FF6F61] transition duration-300 font-semibold inline-block"
                 onClick={() => setOpen(false)}
               >
                 Login

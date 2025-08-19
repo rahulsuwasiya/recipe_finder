@@ -47,19 +47,13 @@ const ContactUs = () => {
     <>
       <Navbar />
 
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-100 via-white to-blue-100 py-20 px-4 text-center">
-        <h1 className="text-5xl font-extrabold text-blue-700 mb-4">Contact Us</h1>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          Have questions, suggestions, or feedback? We’d love to hear from you!
-        </p>
-      </div>
+     
 
       {/* Contact Form + Info */}
-      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 mt-15 items-start">
         {/* Left - Form */}
         <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100">
-          <h2 className="text-2xl font-bold text-blue-800 mb-6">Send Us a Message</h2>
+          <h2 className="text-2xl font-bold text-[#009688] mb-6">Send Us a Message</h2>
 
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
@@ -70,7 +64,7 @@ const ContactUs = () => {
                 placeholder="John Doe"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 shadow-sm"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6F61] shadow-sm"
               />
             </div>
 
@@ -82,7 +76,7 @@ const ContactUs = () => {
                 placeholder="you@example.com"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 shadow-sm"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6F61] shadow-sm"
               />
             </div>
 
@@ -94,7 +88,7 @@ const ContactUs = () => {
                 placeholder="Write your message..."
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 shadow-sm"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#FF6F61] shadow-sm"
               />
             </div>
 
@@ -113,7 +107,7 @@ const ContactUs = () => {
             <button
               type="submit"
               disabled={submitting}
-              className={`w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-lg font-semibold transition shadow-md ${
+              className={`w-full py-3 bg-[#009688] hover:bg-[#FF6F61] text-white rounded-xl text-lg font-semibold transition shadow-md ${
                 submitting ? "opacity-70 cursor-not-allowed" : ""
               }`}
             >
@@ -124,19 +118,19 @@ const ContactUs = () => {
 
         {/* Right - Info Cards */}
         <div className="space-y-8">
-          <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
+          <div className="bg-gradient-to-r from-[#ff9e95]  to-white rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
             <div className="text-4xl mb-3">📍</div>
-            <h3 className="text-lg font-semibold text-blue-800">Our Address</h3>
+            <h3 className="text-lg font-semibold text-[#009688]">Our Address</h3>
             <p className="text-gray-600">123 Recipe Street, Mumbai, India</p>
           </div>
-          <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
-            <div className="text-4xl mb-3">📞</div>
-            <h3 className="text-lg font-semibold text-blue-800">Call Us</h3>
+          <div className="bg-gradient-to-r from-[#ff9e95] to-white rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
+            <div className="text-4xl mb-3 text-[#FF6F61]">📞</div>
+            <h3 className="text-lg font-semibold text-[#009688]">Call Us</h3>
             <p className="text-gray-600">+91 98765 43210</p>
           </div>
-          <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
-            <div className="text-4xl mb-3">📧</div>
-            <h3 className="text-lg font-semibold text-blue-800">Email Us</h3>
+          <div className="bg-gradient-to-r  from-[#ff9e95]  to-white rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
+            <div className="text-4xl mb-3 ">📧</div>
+            <h3 className="text-lg font-semibold text-[#009688]">Email Us</h3>
             <p className="text-gray-600">support@rasoiway.com</p>
           </div>
         </div>

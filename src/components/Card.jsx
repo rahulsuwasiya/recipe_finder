@@ -17,13 +17,13 @@ export default function Card({item}) {
         alt="Card top"
       />
       <div className="p-4">
-        <h5 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+        <h5 className="text-xl font-semibold text-[#263238] dark:text-white mb-2">
           {item.strMeal}
         </h5>
         <p className="text-gray-700 dark:text-gray-400 text-sm mb-4">
           Discover the flavors of this delicious recipe and learn how to prepare it step-by-step.
         </p>
-        <button onClick={() => navigate(`/meal/${item.idMeal}`)} className="px-4 py-2 bg-blue-600  text-white text-sm font-medium rounded hover:bg-blue-700 transition duration-200">
+        <button onClick={() => navigate(`/meal/${item.idMeal}`)} className="px-4 py-2 bg-[#FF6F61]  text-white text-sm font-medium rounded hover:bg-[#009688] transition duration-200">
           View Recipe
         </button>
       </div>
