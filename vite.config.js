@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
      tailwindcss(),
   ],
+  base: "/recipe_finder/", 
 })
