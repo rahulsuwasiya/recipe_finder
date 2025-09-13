@@ -35,18 +35,7 @@ const AboutUs = () => {
       </div>
 
       {/* Footer or CTA */}
-      <div className="text-center bg-[#ffbab4] py-10 px-4">
-        <h3 className="text-xl font-semibold text-[#009688] mb-2">Join Our Culinary Journey</h3>
-        <p className="text-gray-600 max-w-xl mx-auto mb-4">
-          Be a part of our community and explore hundreds of recipes from around the world. Cook. Share. Celebrate.
-        </p>
-        <a
-          href="/"
-          className="bg-[#009688] hover:bg-[#FF6F61] text-white px-6 py-3 rounded-full transition text-sm font-medium"
-        >
-          Start Exploring
-        </a>
-      </div>
+      
     </>
   );
 };

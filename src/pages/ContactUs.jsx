@@ -117,23 +117,7 @@ const ContactUs = () => {
         </div>
 
         {/* Right - Info Cards */}
-        <div className="space-y-8">
-          <div className="bg-gradient-to-r from-[#ff9e95]  to-white rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
-            <div className="text-4xl mb-3">📍</div>
-            <h3 className="text-lg font-semibold text-[#009688]">Our Address</h3>
-            <p className="text-gray-600">123 Recipe Street, Mumbai, India</p>
-          </div>
-          <div className="bg-gradient-to-r from-[#ff9e95] to-white rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
-            <div className="text-4xl mb-3 text-[#FF6F61]">📞</div>
-            <h3 className="text-lg font-semibold text-[#009688]">Call Us</h3>
-            <p className="text-gray-600">+91 98765 43210</p>
-          </div>
-          <div className="bg-gradient-to-r  from-[#ff9e95]  to-white rounded-2xl shadow-md p-6 border border-blue-100 hover:shadow-xl transition">
-            <div className="text-4xl mb-3 ">📧</div>
-            <h3 className="text-lg font-semibold text-[#009688]">Email Us</h3>
-            <p className="text-gray-600">support@rasoiway.com</p>
-          </div>
-        </div>
+       
       </div>
 
       {/* Map */}
