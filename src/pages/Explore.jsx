@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router";
 
 const Explore = () => {
   const [query, setQuery] = useState("");
@@ -52,12 +53,8 @@ const Explore = () => {
                 <div className="p-4">
                   <h2 className="text-lg font-bold text-gray-800 mb-2">{meal.strMeal}</h2>
                   <p className="text-sm text-gray-600 truncate">{meal.strArea} • {meal.strCategory}</p>
-                  <a
-                    href={`/meal/${meal.idMeal}`}
-                    className="inline-block mt-3 text-blue-600 hover:underline text-sm"
-                  >
-                    View Recipe →
-                  </a>
+                 
+                  <Link className="inline-block mt-3 text-blue-600 hover:underline text-sm" to={`/meal/${meal.idMeal}`}>View Recipe →</Link>
                 </div>
               </div>
             ))}
